@@ -15,3 +15,7 @@ sudo apt install jenkins
 cat /var/lib/jenkins/secrets/initialAdminPassword
 #chmod 777 jenkins.sh
 #./jenkins.sh
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+sudo ufw allow 8080
+sudo ufw enable
