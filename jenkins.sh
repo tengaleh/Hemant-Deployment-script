@@ -12,10 +12,10 @@ echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
 sudo apt update
 sudo apt install jenkins
-cat /var/lib/jenkins/secrets/initialAdminPassword
-#chmod 777 jenkins.sh
-#./jenkins.sh
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
 sudo ufw allow 8080
 sudo ufw enable
+cat /var/lib/jenkins/secrets/initialAdminPassword
+#chmod 777 jenkins.sh
+#./jenkins.sh
