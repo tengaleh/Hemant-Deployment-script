@@ -1,0 +1,2 @@
+# how to download file from github in ubuntu 
+# wget -O jenkins.sh https://raw.githubusercontent.com/tengaleh/Hemant-Deployment-script/main/jenkins.sh
