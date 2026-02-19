@@ -5,3 +5,4 @@ curl -SL https://github.com/docker/compose/releases/download/v5.0.1/docker-compo
 $DOCKER_CONFIG/cli-plugins/docker-compose
 sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 docker compose version
+apt install docker-compose
