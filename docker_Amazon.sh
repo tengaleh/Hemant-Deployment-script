@@ -7,8 +7,6 @@ sudo yum install -y docker
 sudo service docker start
 # Enable Docker to start on boot
 sudo service docker enable
-# Check Docker service status
-sudo systemctl status docker
 # Add the ec2-user to the docker group so that you can run Docker commands without using sudo.
 sudo usermod -a -G docker ec2-user
 newgrp docker
