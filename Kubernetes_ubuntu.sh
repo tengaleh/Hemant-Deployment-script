@@ -52,15 +52,18 @@ sudo apt install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
 # Initialize Kubernetes Cluster (Master Node)
-sudo kubeadm init
+sudo kubeadm reset -f
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl get nodes
 
-# Install Network Plugin (Calico)
-kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+# Install Network Plugin (Calico or Flannel -- only one allowed)
+# Flannel → use --pod-network-cidr=10.244.0.0/16
+# Calico → typically use 192.168.0.0/16
+
+# kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 kubectl get nodes
 
