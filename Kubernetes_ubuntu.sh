@@ -67,5 +67,3 @@ kubectl get nodes
 # Join Worker Nodes
 kubeadm token create --print-join-command
 kubectl get pods -A
-
- curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
