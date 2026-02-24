@@ -69,4 +69,5 @@ kubectl get nodes
 
 # Join Worker Nodes
 kubeadm token create --print-join-command
+kubectl get nodes
 kubectl get pods -A
